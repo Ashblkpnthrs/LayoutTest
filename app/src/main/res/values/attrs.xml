@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="SuperSwitchView">
+    <attr name="borderColor" format="color" />
+    <attr name="borderWidth" format="dimension" />
+    <attr name="highlightColor" format="color" />
+    <attr name="highlightTextColor" format="color" />
+    <attr name="baseTextColor" format="color" />
+    <attr name="moveDuration" format="integer" />
+</declare-styleable>
+</resources>

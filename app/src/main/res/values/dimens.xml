@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="SuperSwitchView_Height">40dp</dimen>
+    <dimen name="Base_Margin_XXXS">2dp</dimen>
+    <dimen name="Base_Margin_XXS">4dp</dimen>
+    <dimen name="Base_Margin_XS">8dp</dimen>
+    <dimen name="Base_Margin_S">12dp</dimen>
+    <dimen name="Base_Margin">16dp</dimen>
+    <dimen name="Text_Size_S">12sp</dimen>
+</resources>
