@@ -11,13 +11,13 @@ import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 
-class FlexboxAdapter(private var context: Context, arrayListName: ArrayList<String>, arrayListSubName: ArrayList<String>, arrayListCity: ArrayList<String>, arrayListPhoto: ArrayList<Int> , arrayListDrawable: ArrayList<Drawable>) : RecyclerView.Adapter<FlexboxAdapter.ViewHolder?>() {
+class FlexboxAdapter(private var context: Context, arrayListName: ArrayList<String>, arrayListSubName: ArrayList<String>, arrayListCity: ArrayList<String>, arrayListPhoto: ArrayList<Int> /*, arrayListDrawable: ArrayList<Drawable>*/) : RecyclerView.Adapter<FlexboxAdapter.ViewHolder?>() {
 
     private var name: ArrayList<String> = ArrayList()
     private var subName: ArrayList<String> = ArrayList()
     private var city: ArrayList<String> = ArrayList()
     private var photo: ArrayList<Int> = ArrayList()
-    private var photoGallery : ArrayList<Drawable> = ArrayList()
+    //private var photoGallery : ArrayList<Drawable> = ArrayList()
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -60,6 +60,6 @@ class FlexboxAdapter(private var context: Context, arrayListName: ArrayList<Stri
         this.city = arrayListCity
         this.subName = arrayListSubName
         this.photo = arrayListPhoto
-        this.photoGallery = arrayListDrawable
+        //this.photoGallery = arrayListDrawable
     }
 }

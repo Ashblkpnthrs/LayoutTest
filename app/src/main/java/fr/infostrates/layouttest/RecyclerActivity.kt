@@ -21,8 +21,8 @@ class RecyclerActivity : AppCompatActivity(){
     private var arrayListCity: ArrayList<String> = ArrayList()
     private var arrayListPhoto : ArrayList<Int> = ArrayList()
     private var arrayListDrawable : ArrayList<Drawable> = ArrayList()
-    private lateinit var photoPick: ImageView
-    private lateinit var photoText: TextView
+    //private lateinit var photoPick: ImageView
+    //private lateinit var photoText: TextView
 
     private var adapter: FlexboxAdapter? = null
 
@@ -31,28 +31,28 @@ class RecyclerActivity : AppCompatActivity(){
         setContentView(R.layout.activity_test2)
         val recyclerView : RecyclerView = findViewById(R.id.recyclerView)
         val itemButton : Button = findViewById(R.id.addButton)
-        val pickButton : Button = findViewById(R.id.buttonpick)
+        //val pickButton : Button = findViewById(R.id.buttonpick)
         val subName : EditText = findViewById(R.id.subNameText)
         val name : EditText = findViewById(R.id.nameText)
         val city : EditText = findViewById(R.id.cityText)
-        val photoPick : ImageView = findViewById(R.id.imageViewGallery)
+        //val photoPick : ImageView = findViewById(R.id.imageViewGallery)
         val layoutManager = FlexboxLayoutManager(this)
-        adapter = FlexboxAdapter(this,arrayListName,arrayListSubName,arrayListCity,arrayListPhoto,arrayListDrawable)
+        adapter = FlexboxAdapter(this,arrayListName,arrayListSubName,arrayListCity,arrayListPhoto/*,arrayListDrawable*/)
 
-        pickButton.setOnClickListener {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
-                if (checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_DENIED){
-                    val permissions = arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE);
-                    requestPermissions(permissions, PERMISSION_CODE);
-                }
-                else{
-                    pickImageFromGallery();
-                }
-            }
-            else{
-                pickImageFromGallery();
-            }
-        }
+//        pickButton.setOnClickListener {
+//            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
+//                if (checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_DENIED){
+//                    val permissions = arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE);
+//                    requestPermissions(permissions, PERMISSION_CODE);
+//                }
+//                else{
+//                    pickImageFromGallery();
+//                }
+//            }
+//            else{
+//                pickImageFromGallery();
+//            }
+//        }
 
         itemButton.setOnClickListener {
             when {
@@ -105,11 +105,11 @@ class RecyclerActivity : AppCompatActivity(){
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (resultCode == Activity.RESULT_OK && requestCode == IMAGE_PICK_CODE){
-            photoPick = findViewById(R.id.imageViewGallery)
-            photoText = findViewById(R.id.photoText)
-            photoText.visibility = View.VISIBLE
-            photoPick.visibility = View.VISIBLE
-            photoPick.setImageURI(data?.data)
+            //photoPick = findViewById(R.id.imageViewGallery)
+            //photoText = findViewById(R.id.photoText)
+            //photoText.visibility = View.VISIBLE
+            //photoPick.visibility = View.VISIBLE
+            //photoPick.setImageURI(data?.data)
         }
     }
 

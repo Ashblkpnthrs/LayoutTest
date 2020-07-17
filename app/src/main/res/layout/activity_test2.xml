@@ -26,7 +26,6 @@
             android:ems="10"
             android:gravity="start|top"
             android:imeOptions="actionNext"
-            android:inputType="textMultiLine"
             android:paddingStart="10dp"
             android:textColor="#000000"
             app:layout_constraintEnd_toEndOf="parent"
