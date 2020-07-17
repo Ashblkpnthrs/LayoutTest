@@ -1,10 +1,15 @@
-package fr.infostrates.layouttest
+package fr.infostrates.layouttest.dog
 
+import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import fr.infostrates.layouttest.R
+import fr.infostrates.layouttest.slider.SliderBothActivity
+import fr.infostrates.layouttest.slider.SliderDogActivity
 
-internal class DogAdapter : RecyclerView.Adapter<DogViewHolder>() {
+internal class DogAdapter(private var context: Context) : RecyclerView.Adapter<DogViewHolder>() {
 
     companion object {
         private val DOG_IMAGE_IDS = intArrayOf(
@@ -37,6 +42,10 @@ internal class DogAdapter : RecyclerView.Adapter<DogViewHolder>() {
     override fun onBindViewHolder(holder: DogViewHolder, position: Int) {
         val pos = position % DOG_IMAGE_IDS.size
         holder.bindTo(DOG_IMAGE_IDS[pos])
+        holder.imageView.setOnClickListener{
+            val intent = Intent(context, SliderDogActivity::class.java)
+            context.startActivity(intent)
+        }
     }
 
     override fun getItemCount() = DOG_IMAGE_IDS.size * 4

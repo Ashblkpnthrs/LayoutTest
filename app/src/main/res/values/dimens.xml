@@ -8,4 +8,10 @@
     <dimen name="Base_Margin_S">12dp</dimen>
     <dimen name="Base_Margin">16dp</dimen>
     <dimen name="Text_Size_S">12sp</dimen>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="fragment_horizontal_margin">16dp</dimen>
+    <dimen name="fragment_vertical_margin">16dp</dimen>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
 </resources>

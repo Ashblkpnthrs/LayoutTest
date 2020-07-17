@@ -46,7 +46,7 @@ class SuperSwitchView : LinearLayout {
             mBorderColor = DEFAULT_BORDER_COLOR
             mBorderWidth = DEFAULT_BORDER_WIDTH
             mHighlightColor = DEFAULT_HIGHLIGHT_COLOR
-            mHighlightTextColor = Color.WHITE
+            mHighlightTextColor = Color.BLACK
             mBaseTextColor = Color.BLACK
             mMoveDuration = DEFAULT_MOVE_DURATION
         } else {

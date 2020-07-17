@@ -1,13 +1,17 @@
-package fr.infostrates.layouttest
+package fr.infostrates.layouttest.both
 
+import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import fr.infostrates.layouttest.R
+import fr.infostrates.layouttest.slider.SliderBothActivity
 
 /**
  * Adapter class that handles the data set with the {@link RecyclerView.LayoutManager}
  */
-internal class BothAdapter : RecyclerView.Adapter<BothViewHolder>() {
+internal class BothAdapter(private var context: Context) : RecyclerView.Adapter<BothViewHolder>() {
 
     companion object {
         private val BOTH_IMAGE_IDS = intArrayOf(
@@ -52,7 +56,7 @@ internal class BothAdapter : RecyclerView.Adapter<BothViewHolder>() {
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BothViewHolder {
-        val view = LayoutInflater.from(parent.context)
+        val view = LayoutInflater.from(context)
                 .inflate(R.layout.viewholder_cat, parent, false)
         return BothViewHolder(view)
     }
@@ -60,6 +64,10 @@ internal class BothAdapter : RecyclerView.Adapter<BothViewHolder>() {
     override fun onBindViewHolder(holder: BothViewHolder, position: Int) {
         val pos = position % BOTH_IMAGE_IDS.size
         holder.bindTo(BOTH_IMAGE_IDS[pos])
+        holder.imageView.setOnClickListener{
+            val intent = Intent(context,SliderBothActivity::class.java)
+            context.startActivity(intent)
+        }
     }
 
     override fun getItemCount() = BOTH_IMAGE_IDS.size * 4

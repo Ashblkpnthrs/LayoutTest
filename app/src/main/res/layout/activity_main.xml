@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#DC5F5F"
+    android:background="#F8A5A5"
     tools:context=".MainActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -15,34 +15,23 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <EditText
-            android:id="@+id/editTextTextMultiLine2"
+        <Button
+            android:id="@+id/mazeButton"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="32dp"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="24dp"
             android:layout_marginEnd="16dp"
-            android:background="@drawable/border_text"
-            android:ems="10"
-            android:gravity="start|top"
-            android:inputType="textMultiLine"
-            android:paddingStart="5dp"
-            android:paddingEnd="5dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/barrier"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/textView7"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:text="Password"
-            android:textColor="#FFFFFF"
+            android:background="@drawable/border_button"
+            android:text="Labyrinth"
+            android:textAllCaps="false"
+            android:textColor="#4A4040"
             android:textStyle="bold"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView6" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <fr.infostrates.layouttest.SuperSwitchView
             android:id="@+id/superswitch"
@@ -50,7 +39,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
             app:baseTextColor="#FFFFFF"
             app:borderColor="#000000"
@@ -67,46 +56,22 @@
             <TextView
                 style="@style/AppTheme.SuperSwitch.Item"
                 android:text="Cat"
-                android:textColor="#FFFFFF"
-                android:textColorHighlight="#FFFFFF"
-                android:textColorHint="#FFFFFF"
                 android:textSize="11sp"
                 android:textStyle="bold" />
 
             <TextView
                 style="@style/AppTheme.SuperSwitch.Item"
                 android:text="Both"
-                android:textColor="#FFFFFF"
-                android:textColorHighlight="#FFFFFF"
-                android:textColorHint="#FFFFFF"
                 android:textSize="11sp"
                 android:textStyle="bold" />
 
         </fr.infostrates.layouttest.SuperSwitchView>
-
-        <EditText
-            android:id="@+id/editTextTextMultiLine3"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="16dp"
-            android:background="@drawable/border_text"
-            android:ems="10"
-            android:gravity="start|top"
-            android:inputType="textMultiLine"
-            android:paddingStart="5dp"
-            android:paddingEnd="5dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/barrier"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextMultiLine2" />
 
         <androidx.constraintlayout.widget.Barrier
             android:id="@+id/barrier"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:barrierDirection="end"
-            app:constraint_referenced_ids="textView7,textView6"
             tools:layout_editor_absoluteX="72dp" />
 
         <Button
@@ -123,19 +88,8 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextMultiLine3" />
+            app:layout_constraintTop_toBottomOf="@+id/mazeButton" />
 
-        <TextView
-            android:id="@+id/textView6"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:text="Name"
-            android:textColor="#FFFFFF"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <include

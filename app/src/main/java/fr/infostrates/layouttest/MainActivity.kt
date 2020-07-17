@@ -9,15 +9,21 @@ import com.google.android.flexbox.AlignItems
 import com.google.android.flexbox.FlexDirection
 import com.google.android.flexbox.FlexWrap
 import com.google.android.flexbox.FlexboxLayoutManager
+import fr.infostrates.layouttest.both.BothAdapter
+import fr.infostrates.layouttest.cat.CatAdapter
+import fr.infostrates.layouttest.dog.DogAdapter
+import fr.infostrates.layouttest.maze.LabyrintheActivity
 
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val button : Button = findViewById(R.id.button)
+        val buttonRecycler : Button = findViewById(R.id.button)
+        val buttonMaze : Button = findViewById(R.id.mazeButton)
         val switchView: SuperSwitchView = findViewById(R.id.superswitch)
         val recyclerView : RecyclerView = findViewById(R.id.recyclerview)
+
         val flexboxLayoutManager = FlexboxLayoutManager(this).apply {
             flexWrap = FlexWrap.WRAP
             flexDirection = FlexDirection.ROW
@@ -26,11 +32,15 @@ class MainActivity : AppCompatActivity() {
 
         recyclerView.apply {
             layoutManager = flexboxLayoutManager
-            adapter = DogAdapter()
+            adapter = DogAdapter(context)
         }
 
-        button.setOnClickListener {
+        buttonRecycler.setOnClickListener {
             val intent = Intent(this,RecyclerActivity::class.java)
+            startActivity(intent)
+        }
+        buttonMaze.setOnClickListener{
+            val intent = Intent(this, LabyrintheActivity::class.java)
             startActivity(intent)
         }
 
@@ -40,19 +50,19 @@ class MainActivity : AppCompatActivity() {
                     0 -> {
                         recyclerView.apply {
                             layoutManager = flexboxLayoutManager
-                            adapter = DogAdapter()
+                            adapter = DogAdapter(context)
                         }
                     }
                     1 -> {
                         recyclerView.apply {
                             layoutManager = flexboxLayoutManager
-                            adapter = CatAdapter()
+                            adapter = CatAdapter(context)
                         }
                     }
                     2 -> {
                         recyclerView.apply {
                             layoutManager = flexboxLayoutManager
-                            adapter = BothAdapter()
+                            adapter = BothAdapter(context)
                         }
                     }
                 }

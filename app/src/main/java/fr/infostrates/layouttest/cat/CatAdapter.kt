@@ -1,13 +1,18 @@
-package fr.infostrates.layouttest
+package fr.infostrates.layouttest.cat
 
+import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import fr.infostrates.layouttest.R
+import fr.infostrates.layouttest.slider.SliderBothActivity
+import fr.infostrates.layouttest.slider.SliderCatActivity
 
 /**
  * Adapter class that handles the data set with the {@link RecyclerView.LayoutManager}
  */
-internal class CatAdapter : RecyclerView.Adapter<CatViewHolder>() {
+internal class CatAdapter(private var context: Context) : RecyclerView.Adapter<CatViewHolder>() {
 
     companion object {
         private val CAT_IMAGE_IDS = intArrayOf(
@@ -42,6 +47,10 @@ internal class CatAdapter : RecyclerView.Adapter<CatViewHolder>() {
     override fun onBindViewHolder(holder: CatViewHolder, position: Int) {
         val pos = position % CAT_IMAGE_IDS.size
         holder.bindTo(CAT_IMAGE_IDS[pos])
+        holder.imageView.setOnClickListener{
+                val intent = Intent(context, SliderCatActivity::class.java)
+            context.startActivity(intent)
+        }
     }
 
     override fun getItemCount() = CAT_IMAGE_IDS.size * 4
